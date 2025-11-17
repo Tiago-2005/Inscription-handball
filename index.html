@@ -7,13 +7,29 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="main-nav">
-    <button data-page="accueil">Accueil</button>
-    <button data-page="ville">Ville & Gymnases</button>
-    <button data-page="president">Mot du Président</button>
-    <button data-page="frais">Frais d’inscription</button>
-    <button data-page="equipe">Équipe & Ambiance</button>
-  </nav>
+ <nav class="main-nav">
+  <button data-page="accueil">Accueil</button>
+  <button data-page="ville">Ville & Gymnases</button>
+  <button data-page="president">Mot du Président</button>
+  <button data-page="frais">Frais d’inscription</button>
+  <button data-page="equipe">Équipe & Ambiance</button>
+</nav>
+<style>
+  .main-nav button.active {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.main-nav button').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.main-nav button').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
 
   <!-- SECTION 1 : Page d'accueil - Equipe Senior Nationale 3 -->
   <section id="accueil" class="page active">
